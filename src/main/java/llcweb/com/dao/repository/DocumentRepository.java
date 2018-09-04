@@ -25,4 +25,7 @@ public interface DocumentRepository extends JpaRepository<Document,Integer>{
     @Query("from Document d where d.author like %?1% or d.content like %?1% " +
             "or d.title like %?1% or d.model like %?1%")
     Page<Document> findByOneKey(String key,Pageable pageable);
+
+    Page<Document> findByAuthorId(int id,Pageable pageable);
+    Page<Document> findByModel(String model,Pageable pageable);
 }

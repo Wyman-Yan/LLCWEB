@@ -1,9 +1,4 @@
-package llcweb.com.domain.models; /***********************************************************************
- * Module:  Users.java
- * Author:  Ricardo
- * Purpose: Defines the Class Users
- ***********************************************************************/
-
+package llcweb.com.domain.models;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,7 +10,6 @@ import java.util.*;
 /** 用户表
  * 
  */
-
 @Entity
 @Table(name="users")
 public class Users implements Serializable,UserDetails {
@@ -24,9 +18,10 @@ public class Users implements Serializable,UserDetails {
     */
    @Id
    @GeneratedValue
-   //用户id
-   private long id;
-   //用户名称
+   private int id;
+   /** user name
+    * 
+    */
    private String username;
    //用户密码
    private String password;
@@ -35,7 +30,7 @@ public class Users implements Serializable,UserDetails {
    //人物id
    private int peopleId;
 
-   @ManyToMany(fetch = FetchType.EAGER)
+   @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
    @JoinTable(
            name = "users_roles",
            joinColumns = {
@@ -61,7 +56,7 @@ public class Users implements Serializable,UserDetails {
    public Users(){
    }
 
-   public Users(long id,String username,String password,Date updateTime,int peopleId,
+   public Users(int id,String username,String password,Date updateTime,int peopleId,
                 List<Roles> roles){
       this.id = id;
       this.username = username;
@@ -109,11 +104,11 @@ public class Users implements Serializable,UserDetails {
       this.roles = roles;
    }
 
-   public long getId() {
+   public int getId() {
       return id;
    }
 
-   public void setId(long id) {
+   public void setId(int id) {
       this.id = id;
    }
 
