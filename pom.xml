@@ -110,12 +110,6 @@
             <version>0.23.0.RELEASE</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.31</version>
-        </dependency>
-
         <!--解析Excel文档依赖-->
         <dependency>
             <groupId>org.apache.poi</groupId>
@@ -127,7 +121,6 @@
             <artifactId>poi-ooxml</artifactId>
             <version>3.17</version>
         </dependency>
-<<<<<<< HEAD
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -142,8 +135,6 @@
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
-=======
->>>>>>> 48976cb113d6a1b6e3afccc1fa4a511297c0948e
 
     </dependencies>
 
